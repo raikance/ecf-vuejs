@@ -1,32 +1,28 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+<div id="app">
+<!-- composant non dépendant de la nav -->
+  <MagicNav />
+
+<!-- contenu principal qui va changé en fct de la nav -->
+  <!-- <router-view /> -->
+
+<!-- composant non dépendant de la nav -->
+  <MagicFooter />
+
+</div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import MagicNav    from '@/components/MagicNav'
+import MagicFooter from '@/components/MagicFooter'
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  name: 'App',
+  props: {  },
+  components:{
+    MagicNav,
+    MagicFooter
   }
 }
-</style>
+</script>
+
